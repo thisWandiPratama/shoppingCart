@@ -17,34 +17,22 @@ const Stack = createStackNavigator ();
 const ShoppingCart = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator headerMode={false}>
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{
-            headerRight: () => <ShoppingCartIcon />,
-          }}
         />
         <Stack.Screen
           name="Electronics"
           component={ElectronicsScreen}
-          options={{
-            headerRight: () => <ShoppingCartIcon />,
-          }}
         />
         <Stack.Screen
           name="Books"
           component={BooksScreen}
-          options={{
-            headerRight: () => <ShoppingCartIcon />,
-          }}
         />
         <Stack.Screen
           name="Cart"
           component={CartScreen}
-          options={{
-            headerRight: () => <ShoppingCartIcon />,
-          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

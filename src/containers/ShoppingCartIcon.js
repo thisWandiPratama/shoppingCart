@@ -3,24 +3,24 @@ import {
     View,
     Text,
     StyleSheet,
-    Platform
+    Platform,
+    Image
 } from "react-native";
-
-// import { withNavigation } from '@react-navigation/native'
-
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import { connect } from 'react-redux'
-import Icon from 'react-native-vector-icons/Ionicons'
 
 const ShoppingCartIcon = (props) => (
     <View style={[{ padding: 5 }, Platform.OS == 'android' ? styles.iconContainer : null]}>
         <View style={{
-            position: 'absolute', height: 30, width: 30, borderRadius: 15, backgroundColor: 'rgba(95,197,123,0.8)', right: 15, bottom: 15, alignItems: 'center', justifyContent: 'center', zIndex: 2000,
+            position: 'absolute', height: 25, width: 25, borderRadius: 15, backgroundColor: 'rgba(95,197,123,0.8)', right: 15, bottom: 15, alignItems: 'center', justifyContent: 'center', zIndex: 2000,
 
         }}>
             <Text style={{ color: 'white', fontWeight: 'bold' }}>{props.cartItems.length}</Text>
         </View>
-        <Icon onPress={() => props.navigation.navigate('Cart')} name="ios-cart" size={30} />
+        <TouchableOpacity>
+            <Image source={{uri : 'https://img.icons8.com/material-sharp/2x/shopping-cart.png'}} style={{height : 30, width: 30}} />
+        </TouchableOpacity>
     </View>
 )
 
