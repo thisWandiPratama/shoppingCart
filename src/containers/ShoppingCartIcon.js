@@ -6,7 +6,8 @@ import {
     Platform
 } from "react-native";
 
-import { withNavigation } from 'react-navigation'
+// import { withNavigation } from '@react-navigation/native'
+
 
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -29,7 +30,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(withNavigation(ShoppingCartIcon));
+export default connect(mapStateToProps)(ShoppingCartIcon);
 
 const styles = StyleSheet.create({
     container: {

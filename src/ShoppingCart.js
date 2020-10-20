@@ -51,31 +51,31 @@
 
 
 //import liraries
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+
+// import Method From React Navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+// import Pages Components
+import HomeScreen from '../src/containers/HomeScreen'
+import ElectronicsScreen from '../src/containers/ElectronicsScreen'
+import BooksScreen from '../src/containers/BooksScreen'
+import ShoppingCartIcon from '../src/containers/ShoppingCartIcon'
+import CartScreen from '../src/containers/CartScreen'
 
+const Stack = createStackNavigator()
 
-// create a component
-const ShoppingCart = () => {
+ const ShoppingCart = () => {
     return (
-        <View style={styles.container}>
-            <Text>ShoppingCart</Text>
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Electronics" component={ElectronicsScreen} />
+            <Stack.Screen name="Books" component={BooksScreen} />
+            <Stack.Screen name="Cart" component={CartScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
-};
-
-// define your styles
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
-    },
-});
-
-//make this component available to the app
-export default ShoppingCart;
+}
+export default ShoppingCart
